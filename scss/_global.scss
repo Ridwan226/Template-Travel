@@ -1,0 +1,485 @@
+* {
+  list-style: none;
+  text-decoration: none !important;
+  // transition: 0.1s ease-in-out all;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: $background;
+}
+
+p {
+  padding: 0px;
+}
+
+// --------------------------------------------
+// Reused Style
+// --------------------------------------------
+
+.btn {
+  &.btn-primary {
+    background-color: $primary;
+    border-radius: 20px;
+    border: 1px solid $primary;
+
+    &:hover {
+      background-color: $white;
+      border: 1px solid $primary;
+      color: $primary;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &.btn-outline-primary {
+    border-radius: 20px;
+    border: 1px solid $white;
+    color: $white;
+
+    &:hover {
+      background-color: $primary;
+      border: 1px solid $primary;
+      color: $white;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.title {
+  font-size: $fs-1 * 1.5;
+  font-weight: map-get($map: $font-weights, $key: SemiBold);
+  color: $primary;
+}
+
+.sub-title {
+  font-size: $fs-4;
+  font-weight: map-get($map: $font-weights, $key: Medium);
+  color: $textColor;
+}
+
+// --------------------------------------------
+// Navbar
+// --------------------------------------------
+
+.navbar {
+  background-color: $background;
+  .navbar-brand {
+    font-size: $fs-1;
+    font-weight: map-get($map: $font-weights, $key: Bold);
+    color: $black;
+    letter-spacing: '-5%';
+  }
+
+  .nav-item {
+    .nav-link {
+      font-size: $fs-5;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $black;
+
+      &.active {
+        color: $primary;
+        font-weight: map-get($map: $font-weights, $key: SemiBold);
+      }
+
+      &:hover {
+        color: $primary;
+        font-weight: map-get($map: $font-weights, $key: SemiBold);
+      }
+    }
+  }
+}
+
+// --------------------------------------------
+// Hero
+// --------------------------------------------
+
+.hero {
+  margin: 100px 0px;
+
+  @include media-breakpoint-down(lg) {
+    margin: 50px 0px;
+  }
+
+  .title {
+    font-size: $fs-1 * 2;
+    font-weight: map-get($map: $font-weights, $key: Bold);
+    color: $primary;
+  }
+
+  .sub-title {
+    font-size: $fs-4;
+    font-weight: map-get($map: $font-weights, $key: Medium);
+    color: $textColor;
+    margin: 70px 0px;
+
+    @include media-breakpoint-down(lg) {
+      margin: 30px 0px;
+    }
+  }
+
+  .btn-hero {
+    padding: 10px 50px;
+  }
+
+  .link {
+    font-size: $fs-4;
+    font-weight: map-get($map: $font-weights, $key: Medium);
+    color: $textColor;
+    text-decoration: underline !important;
+
+    &:hover {
+      color: $primary;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  .wp-img-hero {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 30%;
+      border-radius: 20px;
+      background: linear-gradient(
+        360deg,
+        rgba(0, 0, 0, 0.6) 20%,
+        rgba(102, 102, 102, 0) 100%
+      );
+      z-index: 1;
+    }
+    img {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      z-index: -1;
+    }
+    .text-image {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: $fs-9;
+      letter-spacing: 0px;
+      color: $white;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      text-align: center;
+      z-index: 3;
+    }
+  }
+}
+
+// --------------------------------------------
+// Features Section
+// --------------------------------------------
+
+.features {
+  margin: 100px 0px;
+
+  .card-item {
+    padding: 10px;
+    background: $white;
+    border-radius: 20px;
+    box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.08);
+    .img-features {
+      width: 180px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-size: $fs-3;
+      font-weight: map-get($map: $font-weights, $key: SemiBold);
+      color: $primary;
+      text-transform: capitalize;
+    }
+    .card-desc {
+      font-size: $fs-6;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $textColor;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// --------------------------------------------
+// Destination Section
+// --------------------------------------------
+
+.destination {
+  margin: 100px 0px;
+
+  .card-destination {
+    .img-card {
+      border-radius: 20px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-size: $fs-3;
+      font-weight: map-get($map: $font-weights, $key: SemiBold);
+      color: $primary;
+      text-transform: capitalize;
+    }
+
+    .card-desc {
+      font-size: $fs-6;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $textColor;
+      text-transform: capitalize;
+    }
+
+    .price {
+      font-size: $fs-4;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $primary;
+    }
+
+    .badge {
+      background-color: $primary;
+      padding: 5px 15px;
+    }
+    .link {
+      font-size: $fs-4;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $textColor;
+      text-decoration: underline !important;
+    }
+  }
+}
+
+// --------------------------------------------
+// Testimonial Section
+// --------------------------------------------
+
+.testimonial {
+  margin: 100px 0px;
+  .card-testimonial {
+    // border: 1px solid $primary;
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .user-info {
+      .img-user {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-top: -50px;
+      }
+
+      .user-name {
+        font-size: $fs-5;
+        font-weight: map-get($map: $font-weights, $key: SemiBold);
+        color: $primary;
+        text-transform: capitalize;
+      }
+
+      .user-job {
+        font-size: $fs-6;
+        font-weight: map-get($map: $font-weights, $key: Medium);
+        color: $textColor;
+        text-transform: capitalize;
+      }
+    }
+
+    .card-desc {
+      font-size: $fs-6;
+      font-weight: map-get($map: $font-weights, $key: Medium);
+      color: $textColor;
+    }
+  }
+}
+
+// --------------------------------------------
+//  Galery Section
+// --------------------------------------------
+
+.galery {
+  margin: 100px 0px;
+
+  .carousel {
+    overflow-x: clip;
+  }
+
+  .swiper {
+    padding: 5rem 0;
+    overflow: visible;
+    .swiper-slide {
+      width: 400px;
+    }
+  }
+
+  .single {
+    position: relative;
+    pointer-events: none;
+    user-select: none;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: top;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+  }
+}
+
+// --------------------------------------------
+//  Fnq Section
+// --------------------------------------------
+
+.fnq {
+  margin: 100px 0px;
+
+  .accordion-item {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .accordion-button:focus {
+    z-index: 3;
+    border-color: initial;
+    outline: 0;
+    box-shadow: initial;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: $primary;
+    font-weight: map-get($map: $font-weights, $key: SemiBold);
+    background: #fff;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  }
+}
+
+// --------------------------------------------
+//  CTA Section
+// --------------------------------------------
+
+.cta {
+  margin: 100px 0px 0px 0px;
+  background-image: url('../images/bg-cta.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 500px;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.6) 20%,
+      rgba(102, 102, 102, 0) 100%
+    );
+    z-index: -1;
+  }
+
+  .wp-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .title {
+    font-size: $fs-1 * 1.5;
+    font-weight: map-get($map: $font-weights, $key: SemiBold);
+    color: $white;
+  }
+
+  .desc {
+    font-size: $fs-6;
+    font-weight: map-get($map: $font-weights, $key: Regular);
+    color: $white;
+  }
+}
+
+// --------------------------------------------
+// Footer Section
+// --------------------------------------------
+
+.footer {
+  padding: 100px 0px 100px 0px;
+  background-color: $primary;
+
+  .brand {
+    font-size: $fs-1;
+    font-weight: map-get($map: $font-weights, $key: Bold);
+    color: $white;
+    letter-spacing: '-5%';
+  }
+
+  .title {
+    font-size: $fs-5;
+    font-weight: map-get($map: $font-weights, $key: SemiBold);
+    color: $white;
+  }
+
+  .desc {
+    font-size: $fs-6;
+    font-weight: map-get($map: $font-weights, $key: Regular);
+    color: $white;
+  }
+
+  .quick-links {
+    padding: 0px;
+
+    li {
+      padding: 2px 0px;
+      a {
+        font-size: $fs-7;
+        font-weight: map-get($map: $font-weights, $key: Regular);
+        color: $white;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+
+  .socil {
+    a {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+      background-color: $white;
+      color: $primary;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  .btn-outline-primary {
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      border: 1px solid $primary;
+    }
+  }
+}
