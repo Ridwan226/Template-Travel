@@ -159,6 +159,7 @@ p {
   border-radius: 20px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 .features .card-item .card-title {
   font-size: 1.25rem;
@@ -172,6 +173,10 @@ p {
   color: #3c3c3c;
   text-transform: capitalize;
 }
+.features .card-item:hover .img-features {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
 
 .destination {
   margin: 100px 0px;
@@ -182,6 +187,11 @@ p {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.destination .card-destination .img-card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
 }
 .destination .card-destination .card-title {
   font-size: 1.25rem;
@@ -215,7 +225,7 @@ p {
   margin: 100px 0px;
 }
 .testimonial .swiper-testimonial {
-  padding: 100px 0px;
+  padding: 50px 0px;
   overflow: hidden;
 }
 .testimonial .swiper-slide {
@@ -356,7 +366,7 @@ p {
 }
 
 .footer {
-  padding: 100px 0px 100px 0px;
+  padding: 100px 0px 10px 0px;
   background-color: #1e5d58;
 }
 .footer .brand {

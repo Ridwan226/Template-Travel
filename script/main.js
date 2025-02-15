@@ -37,7 +37,7 @@ function raf() {
 
 raf();
 
-var swiper = new Swiper('.mySwiper', {
+var swiper = new Swiper('.swipperTestimonial', {
   spaceBetween: 10,
   loop: true,
   grabCursor: true,
