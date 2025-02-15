@@ -214,6 +214,27 @@ p {
 .testimonial {
   margin: 100px 0px;
 }
+.testimonial .swiper-testimonial {
+  padding: 100px 0px;
+  overflow: hidden;
+}
+.testimonial .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.testimonial .swiper-pagination-testimonial {
+  position: relative;
+  margin-top: 20px;
+  bottom: auto;
+  text-align: center;
+}
+.testimonial .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #1e5d58;
+}
 .testimonial .card-testimonial {
   border-radius: 30px;
   padding: 20px;
@@ -244,6 +265,7 @@ p {
   font-size: 0.938rem;
   font-weight: 500;
   color: #3c3c3c;
+  text-align: left !important;
 }
 
 .galery {

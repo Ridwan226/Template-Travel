@@ -36,3 +36,24 @@ function raf() {
 }
 
 raf();
+
+var swiper = new Swiper('.mySwiper', {
+  spaceBetween: 10,
+  loop: true,
+  grabCursor: true,
+  // centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination-testimonial',
+    clickable: true,
+  },
+  breakpoints: {
+    967: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+  },
+});
